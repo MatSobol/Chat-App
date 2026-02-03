@@ -37,37 +37,4 @@ public class UserController {
             return ResponseEntity.ok().body(userDTO);
         }
     }
-
-    @PostMapping("/send")
-    public ResponseEntity sendRequest(@RequestBody String email) {
-        Authentication auth =
-                SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(auth.getName());
-        System.out.println(email);
-
-        User sender = userRepository.findByEmail(auth.getName());
-        User receiver = userRepository.findByEmail(email);
-        if (sender == null || receiver == null) {
-            return ResponseEntity.badRequest().body("Couldn't find account");
-        }
-        FriendShip friend = new FriendShip();
-        friend.setReceiver(receiver);
-        friend.setSender(sender);
-        friend.setStatus(FriendShipStatus.PENDING);
-        friendShipRepository.save(friend);
-        return ResponseEntity.ok().body("Success");
-    }
-
-    @PostMapping("/accept")
-    public ResponseEntity acceptRequest(@RequestBody String email) {
-        Authentication auth =
-                SecurityContextHolder.getContext().getAuthentication();
-        User receiver = userRepository.findByEmail(auth.getName());
-        User sender = userRepository.findByEmail(email);
-        if (sender == null || receiver == null) {
-            return ResponseEntity.badRequest().body("Couldn't find account");
-        }
-        friendShipRepository.updateStatus(sender.getId(), receiver.getId(), FriendShipStatus.ACCEPTED);
-        return ResponseEntity.ok().body("Success");
-    }
 }
