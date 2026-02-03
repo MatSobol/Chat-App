@@ -1,0 +1,83 @@
+# Learn more
+mobile/# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+mobile/node_modules/
+
+# Expo
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+mobile/expo-env.d.ts
+
+# Native
+mobile/.kotlin/
+mobile/*.orig.*
+mobile/*.jks
+mobile/*.p8
+mobile/*.p12
+mobile/*.key
+mobile/*.mobileprovision
+
+# Metro
+mobile/.metro-health-check*
+
+# debug
+mobile/npm-debug.*
+mobile/yarn-debug.*
+mobile/yarn-error.*
+
+# macOS
+mobile/.DS_Store
+mobile/*.pem
+
+# local env files
+mobile/.env*.local
+
+# typescript
+mobile/*.tsbuildinfo
+mobile/app-example
+
+# generated native folders
+mobile/ios
+mobile/android
+mobile/back/chirp/chirp
+
+# Docs / Gradle
+/back/chirp/chirp/HELP.md
+/back/chirp/chirp/.gradle
+/back/chirp/chirp/build/
+!/back/chirp/chirp/gradle/wrapper/gradle-wrapper.jar
+!/back/chirp/chirp/**/src/main/**/build/
+!/back/chirp/chirp/**/src/test/**/build/
+
+### STS ###
+/back/chirp/chirp/.apt_generated
+/back/chirp/chirp/.classpath
+/back/chirp/chirp/.factorypath
+/back/chirp/chirp/.project
+/back/chirp/chirp/.settings
+/back/chirp/chirp/.springBeans
+/back/chirp/chirp/.sts4-cache
+/back/chirp/chirp/bin/
+!/back/chirp/chirp/**/src/main/**/bin/
+!/back/chirp/chirp/**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+/back/chirp/chirp/.idea
+/back/chirp/chirp/*.iws
+/back/chirp/chirp/*.iml
+/back/chirp/chirp/*.ipr
+/back/chirp/chirp/out/
+!/back/chirp/chirp/**/src/main/**/out/
+!/back/chirp/chirp/**/src/test/**/out/
+
+### NetBeans ###
+/back/chirp/chirp/nbproject/private/
+/back/chirp/chirp/nbbuild/
+/back/chirp/chirp/dist/
+/back/chirp/chirp/nbdist/
+/back/chirp/chirp/.nb-gradle/
+
+### VS Code ###
+/back/chirp/chirp/.vscode/
